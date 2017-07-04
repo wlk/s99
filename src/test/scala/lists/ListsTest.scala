@@ -23,4 +23,10 @@ class ListsTest extends FlatSpec with Matchers {
     Lists.length(List(1, 1, 2, 3, 5, 8)) shouldBe 6
     Lists.length(List.empty) shouldBe 0
   }
+
+  "reverse" should "work" in {
+    reverse(List(1, 1, 2, 3, 5, 8)) shouldBe List(8, 5, 3, 2, 1, 1)
+    reverse(List.empty) shouldBe List.empty
+    reverse(List(1)) shouldBe List(1)
+  }
 }

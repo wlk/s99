@@ -33,4 +33,14 @@ object Lists {
     }
     lengthInner(0, list)
   }
+
+  def reverse[A](list: List[A]): List[A] = {
+    @tailrec
+    def reverseInner(currentList: List[A], list: List[A]): List[A] = list match {
+      case Nil    => currentList
+      case h :: t => reverseInner(h :: currentList, t)
+    }
+
+    reverseInner(Nil, list)
+  }
 }
