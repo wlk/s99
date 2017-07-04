@@ -36,4 +36,10 @@ class ListsTest extends FlatSpec with Matchers {
     isPalindrome(List(1)) shouldBe true
     isPalindrome(List.empty) shouldBe true
   }
+
+  "flatten" should "work" in {
+    flatten(List(List(1, 1), 2, List(3, List(5, 8)))) shouldBe List(1, 1, 2, 3, 5, 8)
+    flatten(List(1, 2, 3, 4)) shouldBe List(1, 2, 3, 4)
+    flatten(List.empty) shouldBe List.empty
+  }
 }

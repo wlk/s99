@@ -47,4 +47,10 @@ object Lists {
   def isPalindrome[A](list: List[A]): Boolean = {
     list == reverse(list)
   }
+
+  // Should be possible to write this with match
+  def flatten(list: List[Any]): List[Any] = list.flatMap {
+    case t: List[_] => flatten(t)
+    case h          => List(h)
+  }
 }
