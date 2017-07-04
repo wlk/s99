@@ -18,4 +18,9 @@ class ListsTest extends FlatSpec with Matchers {
     nth(2, List(1, 1, 2, 3, 5, 8)) shouldBe 2
     an[IllegalArgumentException] should be thrownBy nth(3, List(1))
   }
+
+  "length" should "work" in {
+    Lists.length(List(1, 1, 2, 3, 5, 8)) shouldBe 6
+    Lists.length(List.empty) shouldBe 0
+  }
 }

@@ -23,4 +23,14 @@ object Lists {
     case (0, h :: _)                  => h
     case (n, _ :: t)                  => nth(n - 1, t)
   }
+
+  def length[A](list: List[A]): Int = {
+    @tailrec
+    def lengthInner(currentLength: Int, list: List[A]): Int = list match {
+      case _ :: Nil             => currentLength + 1
+      case _ :: t if t.nonEmpty => lengthInner(currentLength + 1, t)
+      case _                    => currentLength
+    }
+    lengthInner(0, list)
+  }
 }
