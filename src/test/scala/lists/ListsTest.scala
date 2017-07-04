@@ -29,4 +29,11 @@ class ListsTest extends FlatSpec with Matchers {
     reverse(List.empty) shouldBe List.empty
     reverse(List(1)) shouldBe List(1)
   }
+
+  "isPalindrome" should "work" in {
+    isPalindrome(List(1, 2, 3, 2, 1)) shouldBe true
+    isPalindrome(List(1, 2, 3)) shouldBe false
+    isPalindrome(List(1)) shouldBe true
+    isPalindrome(List.empty) shouldBe true
+  }
 }

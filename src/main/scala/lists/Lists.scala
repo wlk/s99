@@ -43,4 +43,8 @@ object Lists {
 
     reverseInner(Nil, list)
   }
+
+  def isPalindrome[A](list: List[A]): Boolean = {
+    list == reverse(list)
+  }
 }
